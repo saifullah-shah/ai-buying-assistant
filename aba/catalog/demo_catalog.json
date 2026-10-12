@@ -1,0 +1,82 @@
+{
+    "products": [
+        {
+            "product_id": "demo-laptop-14",
+            "name": "Demo Ultrabook 14 inches",
+            "category": "laptops",
+            "market": "US",
+            "specs": [
+                {
+                    "key": "screen_size",
+                    "value": 14.0,
+                    "unit": "inches",
+                    "evidence": {
+                        "source_ref": {
+                            "provider": "demo-catalog",
+                            "note": "demo fixture: screen size declared for illustration only"
+                        },
+                        "note": "demo fixture"
+                    }
+                },
+                {
+                    "key": "cpu_model",
+                    "value": "Intel Core i7-1360P",
+                    "unit": "GHz",
+                    "evidence": {
+                        "source_ref": {
+                            "provider": "demo-catalog",
+                            "note": "demo fixture: CPU model declared for illustration only"
+                        },
+                        "note": "demo fixture"
+                    }
+                }
+            ],
+            "is_demo": true
+        },
+        {
+            "product_id": "demo-phones-8",
+            "name": "Demo Phone 8",
+            "category": "phones",
+            "market": "PK",
+            "specs": [
+                {
+                    "key": "battery_capacity",
+                    "value": 4500,
+                    "unit": "mAh",
+                    "evidence": {
+                        "source_ref": {
+                            "provider": "demo-catalog",
+                            "note": "demo fixture: battery capacity illustration only"
+                        },
+                        "note": "demo fixture"
+                    }
+                }
+            ],
+            "is_demo": true
+        }
+    ],
+    "seller_offers": [
+        {
+            "product_id": "demo-laptop-14",
+            "seller_id": "demo-seller-01",
+            "price_amount": 89990,
+            "price_currency": "USD",
+            "condition": "new",
+            "product_url": "https://example.com/demo-laptop-14",
+            "observed_at": "2026-10-13T12:00:00Z",
+            "source_id": "demo-catalog",
+            "is_demo": true
+        },
+        {
+            "product_id": "demo-laptop-14",
+            "seller_id": "demo-seller-02",
+            "price_amount": 79990,
+            "price_currency": "USD",
+            "condition": "refurbished",
+            "product_url": "https://example.com/demo-laptop-14-refurb",
+            "observed_at": "2026-10-12T08:00:00Z",
+            "source_id": "demo-catalog",
+            "is_demo": true
+        }
+    ]
+}

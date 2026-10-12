@@ -47,3 +47,22 @@ Only record a choice as `ACCEPTED` when the user explicitly agrees or the implem
 ## D-008 â€” Product data source
 - Status: OPEN
 - Context: Candidate routes include a curated dataset, affiliate feeds, permitted retailer/marketplace APIs, product-search services, manufacturer documentation, and direct retailer feeds. No provider is approved yet; access rights and available fields must be verified.
+
+## D-009 — Core domain model with provenance and freshness (M1)
+- Status: ACCEPTED
+- Date: 2026-10-13
+- Decision: Implemented a source-neutral core data model comprising Product (canonical identity), SellerOffer (seller-specific price/condition), PriceObservation (time-series price snapshot), ProductSpecification (key/value attrs with explicit Evidence), SourceRef / Evidence provenance, and a deterministic freshness() policy. Validation is hand-written (no pydantic dependency in M1) but the shape is pydantic-compatible for future migration. Package layout is flat `aba/` at repo root for zero-install import. Demo catalog fixture is clearly labelled `is_demo=true` and the loader aborts if any fixture lacks it, preventing accidental presentation of demo data as live.
+- Consequences: Every later layer (requirement profiling, constraint filtering, LLM explanation) can rely on explicit, provenance-rich records rather than implicit LLM assumptions. The model enforces hard constraints (budget, currency format, UTC datetimes) by code before any ranking. The `is_demo` gate is the single kill-switch separating demo fixtures from live offers. The design stays category- and market-agnostic so D-006/D-007 remain open. Drawback: adding a new dependency (pydantic) or changing the layout would require a follow-up refactor.
+
+
+## D-010 — LLM-grounded recommendation layer (M4)
+- Status: ACCEPTED
+- Date: 2026-10-13
+- Design: Prompt templates, grounding rules, and output schema for LLM-grounded recommendations. 
+  LLM API integration deferred to future milestone.  All design-time logic (prompts, grounding 
+  rules, unknowns labeling, output schema) is deterministic and testable without an API key.
+- Consequences: The M3 shortlist entries can be fed to an LLM with explicit instructions 
+  and evidence citations, producing grounded natural-language explanations.  The prompt design 
+  and grounding logic are validated by a 14-test deterministic test suite.  Deferred step: 
+  actual LLM API integration requires model selection, API key approval, and testing with 
+  real LLM responses.

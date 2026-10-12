@@ -1,0 +1,1 @@
+# Domain layer — canonical product, seller offer, and provenance models.
