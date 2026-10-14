@@ -1,0 +1,154 @@
+{
+  "dataset_id": "aba-pakistan-laptop-demo-v1",
+  "dataset_status": "SYNTHETIC_DEMO_ONLY",
+  "market": "PK",
+  "category": "laptop",
+  "created_at_utc": "2026-10-13T18:01:40+00:00",
+  "is_demo": true,
+  "important_notice": "Every product identity, specification, seller, offer, and price in this fixture is synthetic and illustrative. None is a real product listing, verified market price, live stock status, or seller quote. Do not show this data as a live offer. No product images or external product URLs are included.",
+  "products": [
+    {
+      "product_id": "demo-laptop-001",
+      "brand": "DemoWorks",
+      "model": "Study 14 A",
+      "title": "DemoWorks Study 14 A",
+      "category": "laptop",
+      "market": "PK",
+      "is_demo": true,
+      "description": "Synthetic entry-level study laptop record for testing only.",
+      "specifications": {
+        "cpu": "Demo CPU A (illustrative)",
+        "ram_gb": 8,
+        "storage_gb": 256,
+        "storage_type": "SSD (illustrative)",
+        "screen_size_in": 14.0,
+        "display_resolution": "1920x1080 (illustrative)",
+        "gpu": "Integrated (illustrative)",
+        "weight_kg": 1.55,
+        "operating_system": "Not specified",
+        "warranty": "Unknown"
+      },
+      "seller_offer": {
+        "offer_id": "demo-offer-001",
+        "seller_name": "Synthetic Demo Seller A",
+        "price_amount": 125000,
+        "currency": "PKR",
+        "condition": "new (illustrative)",
+        "availability": "unknown",
+        "shipping_cost_amount": null,
+        "product_url": null,
+        "is_demo": true
+      }
+    },
+    {
+      "product_id": "demo-laptop-002",
+      "brand": "DemoWorks",
+      "model": "Creator 15 B",
+      "title": "DemoWorks Creator 15 B",
+      "category": "laptop",
+      "market": "PK",
+      "is_demo": true,
+      "description": "Synthetic mid-range productivity laptop record for testing only.",
+      "specifications": {
+        "cpu": "Demo CPU B (illustrative)",
+        "ram_gb": 16,
+        "storage_gb": 512,
+        "storage_type": "SSD (illustrative)",
+        "screen_size_in": 15.6,
+        "display_resolution": "1920x1080 (illustrative)",
+        "gpu": "Integrated (illustrative)",
+        "weight_kg": 1.85,
+        "operating_system": "Not specified",
+        "warranty": "Unknown"
+      },
+      "seller_offer": {
+        "offer_id": "demo-offer-002",
+        "seller_name": "Synthetic Demo Seller B",
+        "price_amount": 185000,
+        "currency": "PKR",
+        "condition": "new (illustrative)",
+        "availability": "unknown",
+        "shipping_cost_amount": null,
+        "product_url": null,
+        "is_demo": true
+      }
+    },
+    {
+      "product_id": "demo-laptop-003",
+      "brand": "DemoWorks",
+      "model": "Creator 15 C",
+      "title": "DemoWorks Creator 15 C",
+      "category": "laptop",
+      "market": "PK",
+      "is_demo": true,
+      "description": "Synthetic higher-performance laptop record for testing only.",
+      "specifications": {
+        "cpu": "Demo CPU C (illustrative)",
+        "ram_gb": 16,
+        "storage_gb": 1024,
+        "storage_type": "SSD (illustrative)",
+        "screen_size_in": 15.6,
+        "display_resolution": "2560x1440 (illustrative)",
+        "gpu": "Dedicated GPU (illustrative; model unknown)",
+        "weight_kg": 2.15,
+        "operating_system": "Not specified",
+        "warranty": "Unknown"
+      },
+      "seller_offer": {
+        "offer_id": "demo-offer-003",
+        "seller_name": "Synthetic Demo Seller C",
+        "price_amount": 265000,
+        "currency": "PKR",
+        "condition": "new (illustrative)",
+        "availability": "unknown",
+        "shipping_cost_amount": null,
+        "product_url": null,
+        "is_demo": true
+      }
+    },
+    {
+      "product_id": "demo-laptop-004",
+      "brand": "DemoWorks",
+      "model": "Travel 13 D",
+      "title": "DemoWorks Travel 13 D",
+      "category": "laptop",
+      "market": "PK",
+      "is_demo": true,
+      "description": "Synthetic compact laptop record for testing only.",
+      "specifications": {
+        "cpu": "Demo CPU D (illustrative)",
+        "ram_gb": 16,
+        "storage_gb": 512,
+        "storage_type": "SSD (illustrative)",
+        "screen_size_in": 13.3,
+        "display_resolution": "1920x1200 (illustrative)",
+        "gpu": "Integrated (illustrative)",
+        "weight_kg": 1.25,
+        "operating_system": "Not specified",
+        "warranty": "Unknown"
+      },
+      "seller_offer": {
+        "offer_id": "demo-offer-004",
+        "seller_name": "Synthetic Demo Seller D",
+        "price_amount": 210000,
+        "currency": "PKR",
+        "condition": "new (illustrative)",
+        "availability": "unknown",
+        "shipping_cost_amount": null,
+        "product_url": null,
+        "is_demo": true
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "demo-evidence-001",
+      "source_type": "synthetic_fixture",
+      "source_name": "AI Buying Decision Assistant demo fixture authoring",
+      "source_url": null,
+      "checked_at_utc": "2026-10-13T18:01:40+00:00",
+      "supports": "Synthetic test values only; not evidence for real-world product claims.",
+      "is_demo": true
+    }
+  ]
+}
