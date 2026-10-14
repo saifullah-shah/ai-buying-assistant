@@ -1,0 +1,144 @@
+/* ==========================================================================
+   The Buying Studio — design tokens
+   --------------------------------------------------------------------------
+   One source of truth for colour, type, spacing, radius, elevation, motion
+   and breakpoints. Everything in the UI composes from these; no component
+   hard-codes a hex value.
+
+   Palette intent (see README "Design concept"):
+     warm ivory canvas · deep ink text · one cobalt accent · muted slate
+     secondary · restrained green/amber/red reserved for status only.
+   ========================================================================== */
+
+:root {
+  /* ---- Canvas & ink ---------------------------------------------------- */
+  --canvas: #faf8f4;
+  --canvas-sunk: #f3f0ea;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --ink: #14181f;
+  --ink-soft: #3d4552;
+  --ink-muted: #626c7a;
+  --ink-faint: #8a939f;
+
+  /* ---- Accent (cobalt) ------------------------------------------------- */
+  --accent: #2b4fd6;
+  --accent-strong: #1f3cae;
+  --accent-soft: #eaeeff;
+  --accent-border: #c3cdfb;
+  --accent-ink: #1a2f7a;
+
+  /* ---- Status (used sparingly, never decoratively) --------------------- */
+  --ok: #0f7b4f;
+  --ok-soft: #e4f5ec;
+  --ok-border: #a8dcc3;
+  --warn: #96560a;
+  --warn-soft: #fdf0dc;
+  --warn-border: #edc98c;
+  --danger: #b42318;
+  --danger-soft: #fdeceb;
+  --danger-border: #f2b8b4;
+
+  /* ---- Lines & depth --------------------------------------------------- */
+  --line: #e4dfd6;
+  --line-strong: #d3ccc0;
+  --line-accent: var(--accent-border);
+
+  --shadow-xs: 0 1px 2px rgba(20, 24, 31, 0.05);
+  --shadow-sm: 0 1px 3px rgba(20, 24, 31, 0.06), 0 1px 2px rgba(20, 24, 31, 0.04);
+  --shadow-md: 0 4px 16px rgba(20, 24, 31, 0.08), 0 1px 3px rgba(20, 24, 31, 0.05);
+  --shadow-lg: 0 12px 36px rgba(20, 24, 31, 0.12), 0 2px 8px rgba(20, 24, 31, 0.06);
+  --shadow-focus: 0 0 0 3px var(--canvas), 0 0 0 5.5px var(--accent);
+
+  /* ---- Type ------------------------------------------------------------ */
+  --font-display: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype",
+    "Book Antiqua", Palatino, "Times New Roman", serif;
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  --text-2xs: 0.6875rem; /* 11px */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.8125rem; /* 13px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-md: 1.0625rem; /* 17px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 1.5rem; /* 24px */
+  --text-2xl: 1.9375rem; /* 31px */
+  --text-3xl: 2.5rem; /* 40px */
+  --text-4xl: 3.25rem; /* 52px */
+
+  --leading-tight: 1.16;
+  --leading-snug: 1.32;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.72;
+
+  --tracking-tight: -0.018em;
+  --tracking-snug: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-widest: 0.13em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Space (4px base rhythm) ------------------------------------------ */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ---- Radius ----------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+
+  /* ---- Layout ----------------------------------------------------------- */
+  --width-page: 1240px;
+  --width-prose: 68ch;
+  --width-narrow: 880px;
+  --header-height: 68px;
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 280ms;
+
+  --z-sticky: 20;
+  --z-header: 40;
+  --z-drawer: 60;
+  --z-dialog: 70;
+  --z-toast: 90;
+
+  /* ---- Breakpoints (reference values; media queries use the literals) ---- */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}
+
+/* Respect the OS "reduce motion" setting. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
+}

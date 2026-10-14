@@ -6,3 +6,11 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# Frontend (Vite + React) build/install artefacts
+node_modules/
+web/dist/
+web/.vite/
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store
