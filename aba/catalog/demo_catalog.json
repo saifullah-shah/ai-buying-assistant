@@ -1,82 +1,380 @@
 {
-    "products": [
+  "products": [
+    {
+      "product_id": "demo-laptop-14",
+      "name": "Demo Ultrabook 14 inches",
+      "category": "laptops",
+      "market": "US",
+      "specs": [
         {
-            "product_id": "demo-laptop-14",
-            "name": "Demo Ultrabook 14 inches",
-            "category": "laptops",
-            "market": "US",
-            "specs": [
-                {
-                    "key": "screen_size",
-                    "value": 14.0,
-                    "unit": "inches",
-                    "evidence": {
-                        "source_ref": {
-                            "provider": "demo-catalog",
-                            "note": "demo fixture: screen size declared for illustration only"
-                        },
-                        "note": "demo fixture"
-                    }
-                },
-                {
-                    "key": "cpu_model",
-                    "value": "Intel Core i7-1360P",
-                    "unit": "GHz",
-                    "evidence": {
-                        "source_ref": {
-                            "provider": "demo-catalog",
-                            "note": "demo fixture: CPU model declared for illustration only"
-                        },
-                        "note": "demo fixture"
-                    }
-                }
-            ],
-            "is_demo": true
+          "key": "screen_size",
+          "value": 14.0,
+          "unit": "inches",
+          "evidence": {
+            "source_ref": {
+              "provider": "demo-catalog",
+              "note": "demo fixture: screen size declared for illustration only"
+            },
+            "note": "demo fixture"
+          }
         },
         {
-            "product_id": "demo-phones-8",
-            "name": "Demo Phone 8",
-            "category": "phones",
-            "market": "PK",
-            "specs": [
-                {
-                    "key": "battery_capacity",
-                    "value": 4500,
-                    "unit": "mAh",
-                    "evidence": {
-                        "source_ref": {
-                            "provider": "demo-catalog",
-                            "note": "demo fixture: battery capacity illustration only"
-                        },
-                        "note": "demo fixture"
-                    }
-                }
-            ],
-            "is_demo": true
+          "key": "cpu_model",
+          "value": "Intel Core i7-1360P",
+          "unit": "GHz",
+          "evidence": {
+            "source_ref": {
+              "provider": "demo-catalog",
+              "note": "demo fixture: CPU model declared for illustration only"
+            },
+            "note": "demo fixture"
+          }
         }
-    ],
-    "seller_offers": [
+      ],
+      "is_demo": true
+    },
+    {
+      "product_id": "demo-phones-8",
+      "name": "Demo Phone 8",
+      "category": "phones",
+      "market": "PK",
+      "specs": [
         {
-            "product_id": "demo-laptop-14",
-            "seller_id": "demo-seller-01",
-            "price_amount": 89990,
-            "price_currency": "USD",
-            "condition": "new",
-            "product_url": "https://example.com/demo-laptop-14",
-            "observed_at": "2026-10-13T12:00:00Z",
-            "source_id": "demo-catalog",
-            "is_demo": true
+          "key": "battery_capacity",
+          "value": 4500,
+          "unit": "mAh",
+          "evidence": {
+            "source_ref": {
+              "provider": "demo-catalog",
+              "note": "demo fixture: battery capacity illustration only"
+            },
+            "note": "demo fixture"
+          }
+        }
+      ],
+      "is_demo": true
+    },
+    {
+      "product_id": "pk-laptop-01",
+      "name": "Lenovo ThinkPad T14 AMD",
+      "category": "laptops",
+      "market": "PK",
+      "is_demo": true,
+      "specs": [
+        {
+          "key": "screen_size",
+          "value": 14.0,
+          "unit": "inches",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: specs for illustration only"
+            },
+            "note": "demo fixture"
+          }
         },
         {
-            "product_id": "demo-laptop-14",
-            "seller_id": "demo-seller-02",
-            "price_amount": 79990,
-            "price_currency": "USD",
-            "condition": "refurbished",
-            "product_url": "https://example.com/demo-laptop-14-refurb",
-            "observed_at": "2026-10-12T08:00:00Z",
-            "source_id": "demo-catalog",
-            "is_demo": true
+          "key": "cpu_model",
+          "value": "AMD Ryzen 5 7530U",
+          "unit": "GHz",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: CPU model for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "ram_size",
+          "value": 16,
+          "unit": "GB",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: RAM size for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "storage_size",
+          "value": 512,
+          "unit": "GB",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: storage for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "weight",
+          "value": 1.6,
+          "unit": "kg",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: weight for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "battery_capacity",
+          "value": null,
+          "unit": "Wh",
+          "evidence": {
+            "source_ref": {
+              "provider": "unknown",
+              "note": "battery capacity not provided in demo data"
+            },
+            "note": "unknown"
+          }
         }
-    ]
+      ]
+    },
+    {
+      "product_id": "pk-laptop-02",
+      "name": "HP EliteBook 840 G9",
+      "category": "laptops",
+      "market": "PK",
+      "is_demo": true,
+      "specs": [
+        {
+          "key": "screen_size",
+          "value": 14.0,
+          "unit": "inches",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: specs for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "cpu_model",
+          "value": "Intel Core i5-1235U",
+          "unit": "GHz",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: CPU model for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "ram_size",
+          "value": 8,
+          "unit": "GB",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: RAM size for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "storage_size",
+          "value": 256,
+          "unit": "GB",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: storage for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "weight",
+          "value": 1.5,
+          "unit": "kg",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: weight for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "os",
+          "value": "Windows 11",
+          "unit": "None",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: OS for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        }
+      ]
+    },
+    {
+      "product_id": "us-laptop-01",
+      "name": "Dell XPS 13 Plus",
+      "category": "laptops",
+      "market": "US",
+      "is_demo": true,
+      "specs": [
+        {
+          "key": "screen_size",
+          "value": 13.4,
+          "unit": "inches",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: specs for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "cpu_model",
+          "value": "Intel Core i7-1355U",
+          "unit": "GHz",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: CPU model for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "ram_size",
+          "value": 16,
+          "unit": "GB",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: RAM size for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "storage_size",
+          "value": 1024,
+          "unit": "GB",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: storage for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "weight",
+          "value": 1.24,
+          "unit": "kg",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: weight for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        },
+        {
+          "key": "os",
+          "value": "Windows 11",
+          "unit": "None",
+          "evidence": {
+            "source_ref": {
+              "provider": "curated-csv",
+              "note": "demo fixture: OS for illustration only"
+            },
+            "note": "demo fixture"
+          }
+        }
+      ]
+    }
+  ],
+  "seller_offers": [
+    {
+      "product_id": "demo-laptop-14",
+      "seller_id": "demo-seller-01",
+      "price_amount": 89990,
+      "price_currency": "USD",
+      "condition": "new",
+      "product_url": "https://example.com/demo-laptop-14",
+      "observed_at": "2026-10-13T12:00:00Z",
+      "source_id": "demo-catalog",
+      "is_demo": true
+    },
+    {
+      "product_id": "demo-laptop-14",
+      "seller_id": "demo-seller-02",
+      "price_amount": 79990,
+      "price_currency": "USD",
+      "condition": "refurbished",
+      "product_url": "https://example.com/demo-laptop-14-refurb",
+      "observed_at": "2026-10-12T08:00:00Z",
+      "source_id": "demo-catalog",
+      "is_demo": true
+    },
+    {
+      "product_id": "pk-laptop-01",
+      "seller_id": "pk-seller-01",
+      "price_amount": 189999,
+      "price_currency": "PKR",
+      "condition": "refurbished",
+      "product_url": "https://example.com/pk-laptop-01",
+      "observed_at": "2026-10-13T10:00:00+00:00",
+      "source_id": "curated-csv",
+      "is_demo": true
+    },
+    {
+      "product_id": "pk-laptop-01",
+      "seller_id": "pk-seller-02",
+      "price_amount": 229999,
+      "price_currency": "PKR",
+      "condition": "new",
+      "product_url": "https://example.com/pk-laptop-01-new",
+      "observed_at": "2026-10-13T11:00:00+00:00",
+      "source_id": "curated-csv",
+      "is_demo": true
+    },
+    {
+      "product_id": "pk-laptop-02",
+      "seller_id": "pk-seller-03",
+      "price_amount": 159999,
+      "price_currency": "PKR",
+      "condition": "new",
+      "product_url": "https://example.com/pk-laptop-02",
+      "observed_at": "2026-10-13T12:00:00+00:00",
+      "source_id": "curated-csv",
+      "is_demo": true
+    },
+    {
+      "product_id": "us-laptop-01",
+      "seller_id": "us-seller-01",
+      "price_amount": 109990,
+      "price_currency": "USD",
+      "condition": "new",
+      "product_url": "https://example.com/us-laptop-01",
+      "observed_at": "2026-10-13T10:00:00+00:00",
+      "source_id": "curated-csv",
+      "is_demo": true
+    },
+    {
+      "product_id": "us-laptop-01",
+      "seller_id": "us-seller-02",
+      "price_amount": 99990,
+      "price_currency": "USD",
+      "condition": "refurbished",
+      "product_url": "https://example.com/us-laptop-01-refurb",
+      "observed_at": "2026-10-13T11:00:00+00:00",
+      "source_id": "curated-csv",
+      "is_demo": true
+    }
+  ]
 }

@@ -54,23 +54,30 @@ def _format_nice_to_haves(nice_score: int, nice_total: int) -> str:
 
 
 def _format_req_need(need_description: str) -> str:
-    return f"Need: {need_description}"
+    # Value only -- the block template already supplies the "Need:" label.
+    # Returning a labelled string here produced duplicated output such as
+    # "- Need: Need: a laptop for university".
+    return need_description
 
 
 def _format_req_budget(budget_amount: float, budget_currency: str) -> str:
-    return f"Budget: {budget_amount} {budget_currency}"
+    # Value only; label supplied by REQUIREMENT_SUMMARY_BLOCK.
+    return f"{budget_amount} {budget_currency}"
 
 
 def _format_req_condition(req_condition: Optional[str]) -> str:
-    return f"Condition preference: {req_condition if req_condition else 'none specified'}"
+    # Value only; label supplied by REQUIREMENT_SUMMARY_BLOCK.
+    return req_condition if req_condition else "none specified"
 
 
 def _format_req_must_haves(must_haves: Optional[List[str]]) -> str:
-    return f"Must-have specs: {', '.join(must_haves) if must_haves else 'none'}"
+    # Value only; label supplied by REQUIREMENT_SUMMARY_BLOCK.
+    return ", ".join(must_haves) if must_haves else "none"
 
 
 def _format_req_nice_to_haves(nice_to_haves: Optional[List[str]]) -> str:
-    return f"Nice-to-have specs: {', '.join(nice_to_haves) if nice_to_haves else 'none'}"
+    # Value only; label supplied by REQUIREMENT_SUMMARY_BLOCK.
+    return ", ".join(nice_to_haves) if nice_to_haves else "none"
 
 
 # ---------------------------------------------------------------------------

@@ -14,6 +14,33 @@ from enum import Enum
 from typing import Optional
 
 
+#: String values that catalogs commonly use to mean "this specification was not
+#: disclosed".  They are treated as *unknown* by ``ProductSpecification.is_unknown()``
+#: so that a missing field can never satisfy a hard constraint (D-004).
+#:
+#: Comparison is case-insensitive and whitespace-trimmed.
+NOT_DISCLOSED_SENTINELS: frozenset[str] = frozenset(
+    {
+        "unknown",
+        "unspecified",
+        "not specified",
+        "not disclosed",
+        "not available",
+        "not provided",
+        "not applicable",
+        "n/a",
+        "na",
+        "none",
+        "tbd",
+        "to be determined",
+        "tbc",
+        "-",
+        "--",
+        "?",
+    }
+)
+
+
 class VerificationStatus(Enum):
     """Explicit status of how well a fact is supported."""
 
@@ -75,14 +102,35 @@ class ProductSpecification:
     )
 
     def is_unknown(self) -> bool:
-        """Return True when the value is None (i.e. the spec has no assigned value).
+        """Return True when the spec has no usable value.
 
-        A spec that has a value but default provenance (provider="unknown")
-        is not "unknown" in the sense of having no value — it merely lacks
-        evidence.  Callers who need to know about evidence should check
+        A spec counts as unknown when:
+
+        * ``value is None``, or
+        * ``value`` is a string that is blank after stripping, or
+        * ``value`` is a "not disclosed" sentinel such as ``"Unknown"``,
+          ``"Not specified"`` or ``"N/A"``.
+
+        Upstream catalogs frequently encode a missing specification as one of
+        those sentinel strings rather than as a null.  Without this check such a
+        spec would be scored as a *satisfied* preference, which would let an
+        unverified field satisfy a hard constraint — directly contradicting D-004
+        ("unknown facts must remain unknown, not be guessed").
+
+        A spec that has a real value but default provenance
+        (provider="unknown") is still considered known: it has a value, it merely
+        lacks evidence.  Callers who need to know about evidence should check
         ``evidence.source_ref.provider`` directly.
         """
-        return self.value is None
+        if self.value is None:
+            return True
+        if isinstance(self.value, str):
+            cleaned = self.value.strip().lower()
+            if cleaned == "":
+                return True
+            if cleaned in NOT_DISCLOSED_SENTINELS:
+                return True
+        return False
 
 
 @dataclass(frozen=True)
